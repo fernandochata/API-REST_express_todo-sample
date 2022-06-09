@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "API REST - ToDo Sample",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandochata/BackEnd.git"
+  },
+  "keywords": [],
+  "author": "Fernando Chata",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandochata/BackEnd/issues"
+  },
+  "homepage": "https://github.com/fernandochata/BackEnd#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.6",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
