@@ -1,4 +1,5 @@
 import Task from '../models/task.models.js';
+import { validationResult  } from 'express-validator';
 
 export default {
     // Get all tasks
@@ -13,6 +14,9 @@ export default {
     },
     // Create new task
     async create(req, res) {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) { return res.status(400).json({ errors: errors.array() }); }
+
         const task = new Task(req.body);
         await task.save();
         return res.json(task);
