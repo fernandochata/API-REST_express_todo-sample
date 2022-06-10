@@ -26,9 +26,9 @@ Utiliza MongoDB como motor de base de datos
 
 
 ## ✨ Características:
-- ✅ *Deploy* en heroku.
-- ✅ BBDD en Mongo Atlas.
+- ✅ *Deploy* en Heroku.
 - ❗Crear pagina de inicio
+- ✅ Crear la v1 - usando MongoDB/MongoAtlas.
 - ❗ Crear la V2 - usando Postgres
 - ❗ Crear la V3 - usando MySQL
 
