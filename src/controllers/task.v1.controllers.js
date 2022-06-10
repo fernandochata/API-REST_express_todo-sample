@@ -1,4 +1,4 @@
-import Task from '../models/task.models.js';
+import Task from '../models/task.v1.models.js';
 import { validationResult  } from 'express-validator';
 
 export default {
@@ -30,5 +30,9 @@ export default {
     async delete(req, res) {
         const task = await Task.findByIdAndRemove(req.params.id);
         return res.json(task);
+    },
+    // Get info about task-app
+    getInfo(req, res) {
+        return res.json({message: 'Task-app v1 is running'});
     }
 }
