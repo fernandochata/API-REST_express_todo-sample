@@ -28,8 +28,8 @@ Utiliza MongoDB como motor de base de datos
 ## ✨ Características:
 - ✅ *Deploy* en Heroku.
 - ❗Crear pagina de inicio
-- ✅ Crear la v1 - usando (MongoDB/MongoAtlas.)[https://api-rest-todo-sample.herokuapp.com/api/v1](https://api-rest-todo-sample.herokuapp.com/api/v1]
-- ❗ Crear la V2 - usando [Postgres](https://api-rest-todo-sample.herokuapp.com/api/v1](https://api-rest-todo-sample.herokuapp.com/api/v2)
+- ✅ Crear la v1 - usando [MongoDB/MongoAtlas](https://api-rest-todo-sample.herokuapp.com/api/v1]
+- ❗ Crear la V2 - usando [Postgres](https://api-rest-todo-sample.herokuapp.com/api/v2)
 - ❗ Crear la V3 - usando MySQL
 
 
