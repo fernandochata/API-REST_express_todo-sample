@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import { validateRequest } from '../utils/task.v1.validations.js';
-import controllerTask from '../controllers/task.v1.controllers.js';
+import controllerTask from '../controllers/task.v2.controllers.js';
 
 const router = Router();
 

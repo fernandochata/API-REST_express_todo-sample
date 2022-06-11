@@ -16,7 +16,6 @@ export default {
     async create(req, res) {
         const errors = validationResult(req);
         if (!errors.isEmpty()) { return res.status(400).json({ errors: errors.array() }); }
-
         const task = new Task(req.body);
         await task.save();
         return res.json(task);
@@ -32,7 +31,7 @@ export default {
         return res.json(task);
     },
     // Get info about task-app
-    getInfo(req, res) {
-        return res.json({message: 'Task-app v1 is running'});
+    async getInfo(req, res) {
+        res.send({message: 'Task-app v1 is running'});
     }
 }
