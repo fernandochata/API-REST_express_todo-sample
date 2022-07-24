@@ -1,4 +1,5 @@
 import pg from 'pg';
+import 'dotenv/config';
 
 export const pool = new pg.Pool({
     user: process.env.PG_USER || 'fernando',
@@ -7,3 +8,4 @@ export const pool = new pg.Pool({
     password: process.env.PG_PASSWORD  || 'pswd',
     port: process.env.PG_PORT || 5432,
 });
+
