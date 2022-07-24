@@ -7,8 +7,8 @@ async function main() {
 
   app.listen(app.get('port'), () => {
     console.log(`Server on port ${app.get('port')}`)
-    console.log(`http://localhost:${app.get('port')}/api/v1`);
-    console.log(`http://localhost:${app.get('port')}/api/v2`);
+    console.log(`http://localhost:${app.get('port')}/api/mongodb/`);
+    console.log(`http://localhost:${app.get('port')}/api/postgres/`);
   });
 }
     
