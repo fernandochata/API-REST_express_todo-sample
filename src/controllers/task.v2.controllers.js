@@ -1,20 +1,4 @@
-/**
- * * Postgresql Task Controller
- * @param {Object} req - Express Request Object
- * @param {Object} res - Express Response Object
- * @param {Object} next - Express Next Function
- * @returns {Object} - Express Response Object
- * @throws {Error} - Throws an error if the request is not valid
- * @throws {Error} - Throws an error if the request is not authenticated
- * @throws {Error} - Throws an error if the request is not authorized
- * @throws {Error} - Throws an error if the request is not found
- * @throws {Error} - Throws an error if the request is not updated
- * @throws {Error} - Throws an error if the request is not deleted
- * @throws {Error} - Throws an error if the request is not created
- */
-
 import { pool } from "../databases/db.postgresql.js";
-//import { Task } from "../models/task.v2.models.js";
 import { validationResult } from "express-validator";
 
 export default { 
