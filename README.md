@@ -1,57 +1,56 @@
-# API REST - ToDo Sample
+# API REST - ToDo Sample (MongoDB - PostgreSQL)
 
 Ejemplo simple de API REST usando
 
-    🎯 "cors": "^2.8.5"
-    🎯 "dotenv": "^16.0.1"
-    🎯 "express": "^4.18.1"
-    🎯 "express-validator": "^6.14.1"
-    🎯 "mongoose": "^6.3.6"
-    🎯 "morgan": "^1.10.0"
+    🎯 express
+    🎯 express-validator
 
+    🎯 mongoose
+    🎯 pg
+    
+    🎯 cors
+    🎯 dotenv
+    🎯 morgan
+    🎯 ejs
 
-<!-- 
-# v1
-
-[![En Heroku](<img src="https://www.svgrepo.com/show/331424/heroku.svg" alt="drawing" width="50"/>)](https://api-rest-todo-sample.herokuapp.com/api/v1)
-
-
-<img src="https://www.svgrepo.com/show/331424/heroku.svg" alt="drawing" width="50"/>
-
-
-Utiliza MongoDB como motor de base de datos 
-[https://api-rest-todo-sample.herokuapp.com/api/v1](https://api-rest-todo-sample.herokuapp.com/api/v1)
-
-- se ocupan la variable de entorno **MONGO_URI** para conectarse a la base de datos -->
 
 
 ## ✨ Características:
 - ✅ *Deploy* en Heroku.
-- ❗Crear pagina de inicio y 404
-- ✅ Crear la v1 - usando [MongoDB/MongoAtlas](https://api-rest-todo-sample.herokuapp.com/api/v1)
-- ✅ Crear la V2 - usando [Postgres](https://api-rest-todo-sample.herokuapp.com/api/v2)
-- ❗ Crear la V3 - usando MySQL
+- ✅ Crear pagina de inicio
+- ✅ Crear api usando [MongoDB (MongoDB Atlas)](https://api-rest-todo-sample.herokuapp.com/api/mongodb)
+- ✅ Crear api usando [Postgres (Heroku Postgres)](https://api-rest-todo-sample.herokuapp.com/api/postgres)
+- ❗ Crear api usando MySQL
 
 
 ## 🚀 Estructura del proyecto
 ```
 /
-├── ❗public/
-│   ├── index.html
-│   └── favicon.ico
 ├── src/
 │   ├── index.js
 │   ├── app.js
+│   │
+│   ├── views/
+│   │   └── index.ejs
+│   │
 │   ├── controllers/
-│   │   └── task.v1.controllers.js
+│   │   ├── task.mongodb.controller.js
+│   │   └── task.postgres.controllers.js
+│   │
 │   ├── databases/
-│   │   └── databases.js
+│   │   ├── db.postgresql.js
+│   │   ├── db.mysql.js
+│   │   └── db.mongodb.js
+│   │
 │   ├── routes/
-│   │   └── task.v1.routes.js
+│   │   ├── task.mongodb.routes.js
+│   │   └── task.postgres.routes.js
+│   │
 │   ├── models/
-│   │   └── task.v1.models.js
+│   │   └── task.mongodb.models.js
+│   │
 │   └── utils/
-│       └── task.v1.validations.js
+│       └── task.validations.js
 └── package.json
 ```
 

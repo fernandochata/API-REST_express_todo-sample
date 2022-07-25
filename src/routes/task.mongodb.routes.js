@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { validateRequest } from '../utils/task.v1.validations.js';
+import { validateRequest } from '../utils/task.validations.js';
 import controllerTask from '../controllers/task.mongodb.controllers.js';
 
 const router = Router();
