@@ -1,5 +1,7 @@
-import { pool } from "../databases/db.postgresql.js";
-import { validationResult } from "express-validator";
+import { pool } from "../databases/db.postgresql.js"
+import { validationResult } from "express-validator"
+
+const HOST = process.env.PG_HOST || 'localhost'
 
 export default { 
     // Get all tasks
@@ -7,9 +9,9 @@ export default {
         try {
             const tasks = await pool.query("SELECT * FROM tasks ORDER BY id ASC");
             return res.status(200).json({
+                "host": HOST,
                 "status": "OK",
                 "count" : tasks.rowCount,
-                "host": pool.host,
                 "data": tasks.rows
             });
         } catch (error) {
@@ -22,6 +24,7 @@ export default {
             const task = await pool.query("SELECT * FROM tasks WHERE id = $1", [req.params.id])
             if (task.rowCount == 0) return res.status(204).json()
             return res.status(200).json({
+                "host": HOST,
                 "status": "OK",
                 "data": task.rows[0]
             });
@@ -38,6 +41,7 @@ export default {
             }
             const task = await pool.query("INSERT INTO tasks (title, description) VALUES ($1, $2) RETURNING *", [req.body.title, req.body.description]);
             return res.status(200).json({
+                "host": HOST,
                 "status": "OK",
                 "data": task.rows[0]
             });
@@ -51,6 +55,7 @@ export default {
             const task = await pool.query("UPDATE tasks SET title = $1, description = $2, status = $3, updatedAt = current_timestamp WHERE id = $4 RETURNING *", [req.body.title, req.body.description, req.body.status, req.params.id]);
             if (task.rowCount == 0) return res.status(204).json()
             return res.status(200).json({
+                "host": HOST,
                 "status": "OK",
                 "data": task.rows[0]
             });
@@ -64,6 +69,7 @@ export default {
             const task = await pool.query("DELETE FROM tasks WHERE id = $1 RETURNING *", [req.params.id]);
             if (task.rowCount == 0) return res.status(204).json()
             return res.status(200).json({
+                "host": HOST,
                 "status": "OK",
                 "data": task.rows[0]
             });

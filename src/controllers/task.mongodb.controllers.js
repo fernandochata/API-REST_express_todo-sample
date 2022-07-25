@@ -1,6 +1,8 @@
 import Task from '../models/task.mongodb.models.js';
 import { validationResult  } from 'express-validator';
 
+const MONGO_HOST = process.env.MONGO_HOST || localhost
+
 export default {
     // Get all tasks
     async getAll(req, res) {
@@ -9,7 +11,7 @@ export default {
             return res.status(200).json({
                 "status": "OK",
                 "count": Object.keys(tasks).length,
-                "host": db.connection.host, 
+                "host": MONGO_HOST, 
                 "data": tasks })
         } catch (error) {
             return res.status(500).json({"message": error.message})
