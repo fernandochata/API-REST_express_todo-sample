@@ -9,6 +9,7 @@ export default {
             return res.status(200).json({
                 "status": "OK",
                 "count" : tasks.rowCount,
+                "host": pool.host,
                 "data": tasks.rows
             });
         } catch (error) {

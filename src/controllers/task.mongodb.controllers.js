@@ -9,6 +9,7 @@ export default {
             return res.status(200).json({
                 "status": "OK",
                 "count": Object.keys(tasks).length,
+                "host": db.connection.host, 
                 "data": tasks })
         } catch (error) {
             return res.status(500).json({"message": error.message})
