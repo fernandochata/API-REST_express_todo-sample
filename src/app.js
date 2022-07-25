@@ -17,7 +17,7 @@ app.use(express.json());
 app.use('/api/mongodb/', routerV1);
 app.use('/api/postgres/', routerV2);
 
-app.set('port', process.env.PORT || 3000);
+app.set('PORT', process.env.PORT || 3000);
 
 app.set('views', join(__dirname, 'views'))
 app.set('view engine', 'ejs')

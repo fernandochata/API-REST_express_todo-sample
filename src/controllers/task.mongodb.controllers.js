@@ -1,4 +1,4 @@
-import Task from '../models/task.v1.models.js';
+import Task from '../models/task.mongodb.models.js';
 import { validationResult  } from 'express-validator';
 
 export default {
@@ -6,39 +6,50 @@ export default {
     async getAll(req, res) {
         try {
             const tasks = await Task.find();
-            return res.json(tasks);
+            return res.status(200).json({
+                "status": "OK",
+                "count": Object.keys(tasks).length,
+                "data": tasks })
         } catch (error) {
-            console.log(error);
+            return res.status(500).json({"message": error.message})
         }
     },
-    // Get task by idrs
+    // Get task by id
     async getById(req, res) {
         try {
             const task = await Task.findById(req.params.id);
-            return res.json(task);
+            return res.status(200).json({
+                "status": "OK",
+                "data": task })
         } catch (error) {
-            console.log(error);
+            return res.status(500).json({"message": error.message})
         }
     },
     // Create new task
     async create(req, res) {
         try {
             const errors = validationResult(req);
-            if (!errors.isEmpty()) { return res.status(400).json({ errors: errors.array() }); }
+            if (!errors.isEmpty()) {
+                return res.status(400).json({ errors: errors.array() });
+            }
             const task = new Task(req.body);
             await task.save();
-            return res.json(task);
+            return res.status(201).json({
+                "status": "OK",
+                "data": task })
         } catch (error) {
-            console.log(error);
+            return res.status(500).json({"message": error.message})
         }
     },
     // Update task
     async update(req, res) {
         try {
             const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
-            return res.json(task);
+            return res.status(200).json({
+                "status": "OK",
+                "data": task })
         } catch (error) {
-            console.log(error);
+            return res.status(500).json({"message": error.message})
         }
     },
     // Delete task
@@ -47,7 +58,7 @@ export default {
             const task = await Task.findByIdAndRemove(req.params.id);
             return res.json(task);
         } catch (error) {
-            console.log(error);
+            return res.status(500).json({"message": error.message})
         }
     }
 }

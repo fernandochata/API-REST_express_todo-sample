@@ -5,10 +5,10 @@ async function main() {
 
   await connectToMongoDB()
 
-  app.listen(app.get('port'), () => {
-    console.log(`Server on port ${app.get('port')}`)
-    console.log(`http://localhost:${app.get('port')}/api/mongodb/`);
-    console.log(`http://localhost:${app.get('port')}/api/postgres/`);
+  app.listen(app.get('PORT'), () => {
+    console.log(`Server on port ${app.get('PORT')}`)
+    console.log(`http://localhost:${app.get('PORT')}/api/mongodb/`);
+    console.log(`http://localhost:${app.get('PORT')}/api/postgres/`);
   });
 }
     
