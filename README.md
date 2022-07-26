@@ -16,11 +16,14 @@ Ejemplo simple de API REST usando
 
 
 ## ✨ Características:
+- ✅ Crear controladores, rutas y ddbb.
+- ✅ Validar envio de datos.
+- ✅ Crear pagina de inicio con EJS.
 - ✅ *Deploy* en Heroku.
-- ✅ Crear pagina de inicio
 - ✅ Crear api usando [MongoDB (MongoDB Atlas)](https://api-rest-todo-sample.herokuapp.com/api/mongodb)
 - ✅ Crear api usando [Postgres (Heroku Postgres)](https://api-rest-todo-sample.herokuapp.com/api/postgres)
 - ❗ Crear api usando MySQL
+- ❌ Crear documentación con swagger
 
 
 ## 🚀 Estructura del proyecto
