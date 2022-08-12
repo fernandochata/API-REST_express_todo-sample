@@ -1,10 +1,10 @@
 CREATE TABLE IF NOT EXISTS tasks (
     id SERIAL PRIMARY KEY,
-    title VARVHAR(255),
+    title VARCHAR(255),
     description TEXT,
-    status BOOLEAN NOT NULL default false,
-	createdAt TIMESTAMP default current_timestamp,
-	updatedAt TIMESTAMP default current_timestamp
+    status BOOLEAN NOT NULL DEFAULT false,
+	createdAt TIMESTAMP DEFAULT current_timestamp,
+	updatedAt TIMESTAMP DEFAULT current_timestamp
 )
 
 INSERT INTO tasks (title, description) VALUES ('task 1', 'description task 1');
