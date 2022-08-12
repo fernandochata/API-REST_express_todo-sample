@@ -22,7 +22,7 @@ Ejemplo simple de API REST usando
 - ✅ *Deploy* en Heroku.
 - ✅ Crear api usando [MongoDB (MongoDB Atlas)](https://api-rest-todo-sample.herokuapp.com/api/mongodb)
 - ✅ Crear api usando [Postgres (Heroku Postgres)](https://api-rest-todo-sample.herokuapp.com/api/postgres)
-- ❗ Crear api usando MySQL
+- ✅ Crear api usando [MySQL (PlanetScale)](https://api-rest-todo-sample.herokuapp.com/api/mysql)
 - ❌ Crear documentación con swagger
 
 
@@ -38,7 +38,8 @@ Ejemplo simple de API REST usando
 │   │
 │   ├── controllers/
 │   │   ├── task.mongodb.controller.js
-│   │   └── task.postgres.controllers.js
+│   │   ├── task.postgres.controller.js
+│   │   └── task.mysql.controllers.js
 │   │
 │   ├── databases/
 │   │   ├── db.postgresql.js
@@ -47,7 +48,8 @@ Ejemplo simple de API REST usando
 │   │
 │   ├── routes/
 │   │   ├── task.mongodb.routes.js
-│   │   └── task.postgres.routes.js
+│   │   ├── task.postgres.routes.js
+│   │   └── task.mysql.routes.js
 │   │
 │   ├── models/
 │   │   └── task.mongodb.models.js
