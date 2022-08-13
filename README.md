@@ -7,6 +7,7 @@ Ejemplo simple de API REST usando
 
     🎯 mongoose
     🎯 pg
+    🎯 mysql2
     
     🎯 cors
     🎯 dotenv
@@ -24,6 +25,11 @@ Ejemplo simple de API REST usando
 - ✅ Crear api usando [Postgres (Heroku Postgres)](https://api-rest-todo-sample.herokuapp.com/api/postgres)
 - ✅ Crear api usando [MySQL (PlanetScale)](https://api-rest-todo-sample.herokuapp.com/api/mysql)
 - ❌ Crear documentación con swagger
+
+| Commandos         | Acción                                                           |
+|:----------------  |:---------------------------------------------------------------- |
+| `npm install`     | Instala las dependencias necesarias del proyecto                 |
+| `npm run dev`     | Inicia el servidor local como desallorrador en `localhost:3000`  |
 
 
 ## 🚀 Estructura del proyecto
@@ -58,8 +64,3 @@ Ejemplo simple de API REST usando
 │       └── task.validations.js
 └── package.json
 ```
-
-| Commandos         | Acción                                                           |
-|:----------------  |:---------------------------------------------------------------- |
-| `npm install`     | Instala las dependencias necesarias del proyecto                 |
-| `npm run dev`     | Inicia el servidor local como desallorrador en `localhost:3000`  |
